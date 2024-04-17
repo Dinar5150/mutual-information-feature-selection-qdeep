@@ -109,7 +109,7 @@ class TestThreeDimensionalCalcs(unittest.TestCase):
         self.assertAlmostEqual(conditional_mutual_information(self.p, 0, 2), cmi)
 
     def test_prob(self):
-        data = np.array([[True, 0, 4],
+        data = np.array([[True, 0, 7],
                          [True, 2, 3],
                          [True, 1, 2],
                          [False, 0, 1],
@@ -133,7 +133,15 @@ class TestThreeDimensionalCalcs(unittest.TestCase):
         self.assertEqual(np.sum(flat_prob), 1)   # probabilities sum to 1
         self.assertEqual(np.sum(flat_prob==0.4), 1)
         self.assertEqual(np.sum(flat_prob==0.2), 3)
-
+        # Note3: Added a direct check, since the bin order should be assigned
+        # explicitly through the bin boundaries
+        expected_probs = np.array([[[0.4, 0. , 0. , 0. ],
+                                    [0. , 0. , 0. , 0. ],
+                                    [0. , 0. , 0. , 0. ]],
+                                   [[0. , 0. , 0. , 0.2],
+                                    [0. , 0.2, 0. , 0. ],
+                                    [0. , 0. , 0.2, 0. ]]])
+        self.assertTrue(np.allclose(multidim_prob, expected_probs, atol=1e-14))
 
 class TestIntegration(unittest.TestCase):
     @unittest.skipIf(os.getenv('SKIP_INT_TESTS'), "Skipping integration test.")
