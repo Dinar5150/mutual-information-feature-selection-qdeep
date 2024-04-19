@@ -33,9 +33,9 @@ def prob(dataset):
 
     # bin by the number of different values per feature
     num_rows, num_columns = dataset.shape
-    bins = [len(np.unique(dataset[:, ci])) for ci in range(num_columns)]
+    bin_boundaries = [np.hstack((np.unique(dataset[:, ci]), np.inf)) for ci in range(num_columns)]
 
-    prob, _ = np.histogramdd(dataset, bins)
+    prob, _ = np.histogramdd(dataset, bins=bin_boundaries)
     return prob / np.sum(prob)
 
 
