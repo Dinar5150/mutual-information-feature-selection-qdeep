@@ -24,7 +24,7 @@ import pandas as pd
 
 # D-Wave Ocean tools
 import dimod
-from dwave.system import DWaveCliqueSampler
+from dwave.samplers import SimulatedAnnealingSampler
 
 
 # Define MI calculations
@@ -115,7 +115,7 @@ def mutual_information_feature_selection(dataset, features, target, num_reads=50
     """Run the MIFS algorithm on a QPU solver"""
     
     # Set up a QPU sampler that embeds to a fully-connected graph of all the variables
-    sampler = DWaveCliqueSampler()
+    sampler = SimulatedAnnealingSampler()
 
     # For each number of features, k, penalize selection of fewer or more features
     selected_features = np.zeros((len(features), len(features)))
@@ -193,4 +193,3 @@ if __name__ == "__main__":
     plots_path = os.path.join(demo_path, "plots.png")
     plt.savefig(plots_path, bbox_inches="tight")
     print("Your plots are saved to {}".format(plots_path))
-
