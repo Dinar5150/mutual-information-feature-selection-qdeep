@@ -7,7 +7,7 @@
 
 # Important note
 
-This repository was forked from the D-Wave's [mutual-information-feature-selection](https://github.com/dwave-examples/mutual-information-feature-selection) repository. Authors of this repository do not own any of the code, all credit goes to D-Wave systems and their contributors.
+This repository is a fork of [D-Wave's original mutual-information-feature-selection](https://github.com/dwave-examples/mutual-information-feature-selection). Authors of this repository do not own any of the code, all credit goes to D-Wave systems and their contributors. The contributors to this fork do not claim ownership or authorship of the original codebase. All credit for the original work belongs to D-Wave Systems and its respective contributors.
 
 # MIQUBO Method of Feature Selection
 
