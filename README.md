@@ -5,6 +5,10 @@
   https://circleci.com/gh/dwave-examples/mutual-information-feature-selection.svg?style=shield)](
   https://circleci.com/gh/dwave-examples/mutual-information-feature-selection)
 
+# Important note
+
+This repository was forked from the code examples from the D-Wave's [mutual-information-feature-selection](https://github.com/dwave-examples/mutual-information-feature-selection) repository. Authors of this repository do not own any of the code, all credit goes to D-Wave systems and their contributors.
+
 # MIQUBO Method of Feature Selection
 
 The demo illustrates the MIQUBO method by finding an optimal feature set for
