@@ -34,8 +34,7 @@ This is a hard calculation because the number of states is exponential with `k`.
 
 The Mutual Information QUBO [(MIQUBO)](#MIQUBO) method of feature selection
 formulates a quadratic unconstrained binary optimization (QUBO) based on an
-approximation for `I(Xs; Y)`, which is submitted to the D-Wave quantum computer
-for solution.
+approximation for `I(Xs; Y)`, which is submitted to the QDeep computer for the solution.
 
 [1]: https://en.wikipedia.org/wiki/Feature_selection
 [2]: https://en.wikipedia.org/wiki/Mutual_information
