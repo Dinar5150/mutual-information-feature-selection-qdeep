@@ -111,7 +111,8 @@ def mutual_information_feature_selection(dataset, features, target):
 
         # Solve the QUBO using the QDeepHybridSolver API.
         result = solver.solve(Q)
-        configuration = result["configuration"]  # Binary vector of length n
+        # Note: In the new API the response is nested under "QdeepHybridSolver"
+        configuration = result["QdeepHybridSolver"]["configuration"]
         # Create a sample dict mapping each variable (feature) to its binary decision.
         sample = {var: configuration[i] for i, var in enumerate(ordering)}
         for fi, f in enumerate(features):
